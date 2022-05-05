@@ -75,7 +75,7 @@ verifyTabButton.addEventListener("click", () => {
 
     const msg = messageInput.value;
     const msgHash = SHA256.hash(msg).toUint8Array();
-    const msgHashBuffer = Buffer.from(msgHash); // NOTE: hash is in hex encoding
+    const msgHashBuffer = Buffer.from(msgHash);
 
     const signature = signatureInput.value;
     const signatureBuffer = Buffer.from(signature, "base64");
