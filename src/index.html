@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>terra-sign</title>
+    <style>
+      body {
+        padding: 0rem 2rem;
+      }
+      input {
+        display: block;
+        width: min(600px, 100%);
+      }
+      textarea {
+        display: block;
+        min-height: 100px;
+        width: min(600px, 100%);
+      }
+      .mb-1 {
+        margin-bottom: 0.5rem;
+      }
+      .mb-2 {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sign or verify messages using Terra Station</h1>
+    <div class="mb-2">
+      <button id="signTabButton" disabled>Sign</button>
+      <button id="verifyTabButton">Verify</button>
+      <button id="connectWalletButton">Connect Wallet</button>
+      <button id="disconnectWalletButton" disabled>Disconnect Wallet</button>
+    </div>
+    <div id="walletStatusDiv" class="mb-2">
+      Wallet is not connected!
+    </div>
+    <div id="signTab">
+      <div class="mb-1">Message:</div>
+      <textarea id="messageToSignInput" class="mb-1"></textarea>
+      <button id="signButton" class="mb-2" disabled>Sign</button>
+      <div id="signResult" style="display: none;">
+        <div class="mb-1">
+          👉 Result:
+        </div>
+        <textarea id="signResultTextArea"></textarea>
+      </div>
+    </div>
+    <div id="verifyTab" style="display: none;">
+      <div class="mb-1">Signer pubkey in base64 encoding:</div>
+      <input type="text" id="signerInput" class="mb-1"></input>
+      <div class="mb-1">Message:</div>
+      <textarea id="messageInput" class="mb-1"></textarea>
+      <div class="mb-1">Signature in base64 encoding:</div>
+      <textarea id="signatureInput" class="mb-1"></textarea>
+      <button id="verifyButton" class="mb-2">Verify</button>
+      <div id="verifyResult" style="display: none;">
+        <div class="mb-1">
+          👉 Make sure signature is valid AND signer address is correct!
+        </div>
+        <textarea id="verifyResultTextArea"></textarea>
+      </div>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
